@@ -1,0 +1,100 @@
+[
+  {
+    "id": "led-d0",
+    "nome": "LED D0",
+    "pino": "D0",
+    "categoria": "LED",
+    "narracao": "Este é o LED conectado ao pino D zero. LEDs são luzes pequenas que você pode ligar e desligar através de código, muito usadas para dar feedback visual em projetos de robótica."
+  },
+  {
+    "id": "led-d1",
+    "nome": "LED D1",
+    "pino": "D1",
+    "categoria": "LED",
+    "narracao": "Este é o LED conectado ao pino D um, um dos oito LEDs individuais da placa."
+  },
+  {
+    "id": "led-d2",
+    "nome": "LED D2",
+    "pino": "D2",
+    "categoria": "LED",
+    "narracao": "Este é o LED conectado ao pino D dois, um dos oito LEDs individuais da placa."
+  },
+  {
+    "id": "led-d3",
+    "nome": "LED D3",
+    "pino": "D3",
+    "categoria": "LED",
+    "narracao": "Este é o LED conectado ao pino D três, um dos oito LEDs individuais da placa."
+  },
+  {
+    "id": "led-d4",
+    "nome": "LED D4",
+    "pino": "D4",
+    "categoria": "LED",
+    "narracao": "Este é o LED conectado ao pino D quatro, um dos oito LEDs individuais da placa."
+  },
+  {
+    "id": "led-d5",
+    "nome": "LED D5",
+    "pino": "D5",
+    "categoria": "LED",
+    "narracao": "Este é o LED conectado ao pino D cinco, um dos oito LEDs individuais da placa."
+  },
+  {
+    "id": "led-d6",
+    "nome": "LED D6",
+    "pino": "D6",
+    "categoria": "LED",
+    "narracao": "Este é o LED conectado ao pino D seis, um dos oito LEDs individuais da placa."
+  },
+  {
+    "id": "led-d7",
+    "nome": "LED D7",
+    "pino": "D7",
+    "categoria": "LED",
+    "narracao": "Este é o LED conectado ao pino D sete, o último dos oito LEDs individuais da placa."
+  },
+  {
+    "id": "botao-d8",
+    "nome": "Botão 1",
+    "pino": "D8",
+    "categoria": "Botão",
+    "narracao": "Este é o botão um, conectado ao pino D oito. Botões enviam um sinal quando pressionados, permitindo que o seu programa reaja a uma ação sua."
+  },
+  {
+    "id": "botao-d9",
+    "nome": "Botão 2",
+    "pino": "D9",
+    "categoria": "Botão",
+    "narracao": "Este é o botão dois, conectado ao pino D nove. Assim como o botão um, ele envia um sinal quando pressionado."
+  },
+  {
+    "id": "servo-d10",
+    "nome": "Saída Servo 1",
+    "pino": "D10",
+    "categoria": "Servo motor",
+    "narracao": "Esta é a saída para o primeiro servo motor, no pino D dez. Servo motores se movem até uma posição específica que você define no código, úteis para criar movimento controlado, como um braço robótico."
+  },
+  {
+    "id": "servo-d11",
+    "nome": "Saída Servo 2",
+    "pino": "D11",
+    "categoria": "Servo motor",
+    "narracao": "Esta é a saída para o segundo servo motor, no pino D onze."
+  },
+  {
+    "id": "buzzer-d12",
+    "nome": "Buzzer",
+    "pino": "D12",
+    "categoria": "Som",
+    "narracao": "Este é o buzzer, conectado ao pino D doze através de um jumper. O buzzer emite sons, podendo ser usado para dar alertas sonoros ou tocar melodias simples no seu projeto."
+  },
+  {
+    "id": "led-13",
+    "nome": "LED indicador",
+    "pino": "13",
+    "categoria": "LED",
+    "narracao": "Este é o LED indicador extra da placa, ligado ao pino treze. Costuma ser usado como luz de status do sistema."
+  }
+]
