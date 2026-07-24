@@ -92,9 +92,9 @@
   },
   {
     "id": "led-13",
-    "nome": "LED indicador",
+    "nome": "LED do pino 13",
     "pino": "13",
     "categoria": "LED",
-    "narracao": "Este é o LED indicador extra da placa, ligado ao pino treze. Costuma ser usado como luz de status do sistema."
+    "narracao": "Este é o LED extra ligado ao pino treze, o mesmo pino do LED embutido no Arduino UNO original. Diferente do LED de power, que fica sempre aceso enquanto a placa está ligada, este LED não tem uma função fixa: é você quem decide o que ele faz através do seu código. É tradicionalmente usado no primeiro projeto de quem aprende Arduino, o Blink, que liga e desliga esse LED em intervalos regulares, servindo também para confirmar que o seu código está rodando corretamente na placa."
   }
 ]
