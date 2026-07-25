@@ -1,9 +1,17 @@
-/* Paleta com bom contraste — texto escuro sobre fundo claro, foco visível */
+/* Paleta baseada nas cores da Escola ORT (roxo/verde), checada contra WCAG:
+   - roxo sobre branco: ~12:1 (ótimo pra texto/botões)
+   - verde sobre branco: ~2,3:1 (reprova — nunca usar como texto em fundo claro)
+   - texto escuro sobre verde: ~7,7:1 (ótimo — verde só como fundo, nunca como texto)
+   - roxo sobre verde: ~5,3:1 (passa AA — os dois continuam distinguíveis em
+     simulação de daltonismo, já que o roxo mantém o canal azul)
+   Ver docs/referencias/ferramentas-e-acessibilidade/guia-cores-e-acessibilidade.md */
 :root {
   --cor-fundo: #ffffff;
   --cor-texto: #1a1a1a;
-  --cor-destaque: #1a4d8f;
-  --cor-destaque-hover: #123765;
+  --cor-destaque: #4b1e78;
+  --cor-destaque-hover: #341455;
+  --cor-acento: #6fc02d;
+  --cor-acento-texto: #1a1a1a;
   --cor-borda: #cccccc;
 }
 
@@ -21,14 +29,30 @@ body {
   padding: 0;
 }
 
-header, main, footer {
+main, footer {
   max-width: 700px;
   margin: 0 auto;
   padding: 1.5rem;
 }
 
+/* Faixa de destaque com a cor de acento (verde) — texto permanece escuro
+   por cima (var(--cor-texto)), que já garante contraste alto (~7,7:1) */
+header {
+  background: var(--cor-acento);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 0 0 10px 10px;
+}
+
+header a {
+  color: var(--cor-destaque);
+  font-weight: bold;
+}
+
 h1 {
   font-size: 1.8rem;
+  color: var(--cor-destaque);
 }
 
 nav ul {
@@ -116,12 +140,13 @@ a:focus, button:focus {
 }
 
 .mensagem-usuario {
-  background: #e6f0ff;
+  background: #efe6f7;
   margin-left: auto;
 }
 
 .mensagem-ia {
   background: #f2f2f2;
+  border-left: 4px solid var(--cor-acento);
 }
 
 #formulario-chat {
