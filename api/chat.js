@@ -1,5 +1,5 @@
 // Função serverless (roda no servidor do Vercel, não no navegador) — mantém a
-// chave da API do Gemini fora do código público que o navegador recebe.
+// chave da API da Groq fora do código público que o navegador recebe.
 
 const PROMPT_SISTEMA = `Você é o assistente do Tacta, um cubo educacional de robótica baseado em Arduino,
 adaptado para pessoas com deficiência visual (identificação em braile, cores diferenciadas, feedback
@@ -22,27 +22,31 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const chaveApi = process.env.GEMINI_API_KEY;
+  const chaveApi = process.env.GROQ_API_KEY;
   if (!chaveApi) {
     res.status(500).json({ erro: 'Chave da API não configurada no servidor' });
     return;
   }
 
   try {
-    const respostaGemini = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${chaveApi}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: PROMPT_SISTEMA }] },
-          contents: [{ role: 'user', parts: [{ text: mensagem }] }],
-        }),
-      }
-    );
+    const respostaGroq = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${chaveApi}`,
+      },
+      body: JSON.stringify({
+        model: 'llama-3.3-70b-versatile',
+        messages: [
+          { role: 'system', content: PROMPT_SISTEMA },
+          { role: 'user', content: mensagem },
+        ],
+        max_tokens: 500,
+      }),
+    });
 
-    const dados = await respostaGemini.json();
-    const texto = dados?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const dados = await respostaGroq.json();
+    const texto = dados?.choices?.[0]?.message?.content;
 
     if (!texto) {
       res.status(502).json({ erro: 'Resposta inesperada da IA', detalhe: dados });
