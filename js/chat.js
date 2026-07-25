@@ -6,6 +6,7 @@ const campoMensagem = document.getElementById('campo-mensagem');
 const historico = document.getElementById('historico-chat');
 const status = document.getElementById('status-chat');
 const botaoParar = document.getElementById('botao-parar');
+const botaoMicrofone = document.getElementById('botao-microfone');
 
 function narrar(texto) {
   window.speechSynthesis.cancel();
@@ -25,6 +26,61 @@ botaoParar.addEventListener('click', () => {
   window.speechSynthesis.cancel();
   status.textContent = 'Narração interrompida.';
 });
+
+// Entrada por voz — nem todo navegador suporta (funciona em Chrome/Edge; não
+// funciona no Firefox e é instável no Safari). Se não tiver suporte, avisa e
+// deixa só o campo de texto disponível.
+const ReconhecimentoDeFala = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!ReconhecimentoDeFala) {
+  botaoMicrofone.disabled = true;
+  botaoMicrofone.title = 'Entrada por voz não é compatível com este navegador. Use o campo de texto.';
+} else {
+  const reconhecimento = new ReconhecimentoDeFala();
+  reconhecimento.lang = 'pt-BR';
+  reconhecimento.interimResults = false;
+  reconhecimento.maxAlternatives = 1;
+
+  let ouvindo = false;
+
+  botaoMicrofone.addEventListener('click', () => {
+    if (ouvindo) {
+      reconhecimento.stop();
+      return;
+    }
+    reconhecimento.start();
+  });
+
+  reconhecimento.addEventListener('start', () => {
+    ouvindo = true;
+    botaoMicrofone.setAttribute('aria-pressed', 'true');
+    botaoMicrofone.textContent = '🎤 Ouvindo...';
+    status.textContent = 'Ouvindo... fale sua pergunta.';
+  });
+
+  reconhecimento.addEventListener('end', () => {
+    ouvindo = false;
+    botaoMicrofone.setAttribute('aria-pressed', 'false');
+    botaoMicrofone.textContent = '🎤 Falar';
+  });
+
+  reconhecimento.addEventListener('result', (evento) => {
+    const transcricao = evento.results[0][0].transcript;
+    campoMensagem.value = transcricao;
+    status.textContent = `Você disse: ${transcricao}`;
+    formulario.requestSubmit();
+  });
+
+  reconhecimento.addEventListener('error', (evento) => {
+    if (evento.error === 'not-allowed') {
+      status.textContent = 'Permissão de microfone negada. Ative o microfone nas configurações do navegador para usar a entrada por voz.';
+    } else if (evento.error === 'no-speech') {
+      status.textContent = 'Não ouvi nada. Tente falar novamente.';
+    } else {
+      status.textContent = 'Não consegui entender pelo microfone. Tente de novo ou digite sua mensagem.';
+    }
+  });
+}
 
 formulario.addEventListener('submit', async (evento) => {
   evento.preventDefault();

@@ -152,6 +152,15 @@ a:focus, button:focus {
   cursor: pointer;
 }
 
+#botao-microfone[aria-pressed="true"] {
+  background: #c0392b;
+}
+
+#botao-microfone:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
 .aviso {
   background: #fff4e5;
   border: 1px solid #e0a35c;
