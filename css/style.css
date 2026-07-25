@@ -96,9 +96,60 @@ a:focus, button:focus {
   cursor: pointer;
 }
 
-#status-narracao {
+#status-narracao,
+#status-chat {
   margin-top: 1rem;
   font-style: italic;
+}
+
+#historico-chat {
+  min-height: 3rem;
+  margin: 1rem 0;
+}
+
+.mensagem-usuario,
+.mensagem-ia {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+  max-width: 90%;
+}
+
+.mensagem-usuario {
+  background: #e6f0ff;
+  margin-left: auto;
+}
+
+.mensagem-ia {
+  background: #f2f2f2;
+}
+
+#formulario-chat {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+#formulario-chat label {
+  position: absolute;
+  left: -999px;
+}
+
+#campo-mensagem {
+  flex: 1;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 6px;
+}
+
+#formulario-chat button {
+  padding: 0.7rem 1.2rem;
+  background: var(--cor-destaque);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .aviso {

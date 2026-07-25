@@ -7,15 +7,31 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="pular-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
   <header>
     <h1>Chat com a IA</h1>
     <p><a href="index.html">&larr; Voltar ao início</a></p>
   </header>
 
-  <main>
-    <div class="aviso">
-      <p>Esta parte ainda está em construção — chega na Semana 3 do cronograma. Aqui vai entrar o chat que ensina montagem de circuitos simples, com respostas narradas por voz.</p>
+  <main id="conteudo-principal">
+    <p>Pergunte sobre robótica ou peça pra te guiar na montagem de um circuito simples, como acender um LED.</p>
+
+    <div class="acoes-narracao">
+      <button type="button" id="botao-parar">Parar narração</button>
     </div>
+
+    <div id="historico-chat" role="log" aria-live="polite" aria-label="Histórico da conversa"></div>
+
+    <p id="status-chat" role="status" aria-live="polite"></p>
+
+    <form id="formulario-chat">
+      <label for="campo-mensagem">Sua mensagem</label>
+      <input type="text" id="campo-mensagem" name="mensagem" autocomplete="off" required>
+      <button type="submit">Enviar</button>
+    </form>
   </main>
+
+  <script src="js/chat.js"></script>
 </body>
 </html>
