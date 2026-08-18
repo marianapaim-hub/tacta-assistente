@@ -8,7 +8,7 @@
 | [revistageo-tecnologia-educacional-assistiva.md](revistageo-tecnologia-educacional-assistiva.md) | Tecnologia educacional + assistiva para inclusão de alunos com deficiência visual | **Alta** — envie o PDF completo |
 | [ufg-prototipo-assistivo-engenharia.md](ufg-prototipo-assistivo-engenharia.md) | Protótipo assistivo para alunos de engenharia com deficiência visual | Média — envie o PDF se quiser aprofundar |
 | [ieee-lakshay-multimetro-falante.md](ieee-lakshay-multimetro-falante.md) | Multímetro "falante" para pessoas com deficiência visual (abstract lido) | Média |
-| [pnta-mcti.md](pnta-mcti.md) | Plano Nacional de Tecnologia Assistiva (governo federal) | Baixa/opcional — PDF não lido ainda |
+| [pnta-mcti.md](pnta-mcti.md) | Plano Nacional de Tecnologia Assistiva (governo federal) — traz a estatística de 35 milhões de brasileiros com deficiência visual | **Alta** — boa abertura pra introdução do artigo |
 | [cadernosdeto-orteses-3d.md](cadernosdeto-orteses-3d.md) | Revisão sobre órteses/próteses 3D — não é sobre deficiência visual | Baixa, relevância indireta |
 
 ## Nota geral sobre PDFs

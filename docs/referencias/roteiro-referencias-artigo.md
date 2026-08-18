@@ -8,9 +8,9 @@ Curadoria das fontes já lidas/organizadas em `/docs/referencias`, selecionadas 
 Link: http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2015/Lei/L13146.htm
 Justificativa: base legal brasileira para acessibilidade. Use para justificar formalmente *por que* o projeto existe — não é só uma escolha de design, é alinhado a uma lei federal que garante direito à acessibilidade tecnológica e educacional.
 
-**Plano Nacional de Tecnologia Assistiva (PNTA) — MCTI** 📄
+**Plano Nacional de Tecnologia Assistiva (PNTA) — MCTI**
 Link: https://www.gov.br/mcti/pt-br/centrais-de-conteudo/publicacoes-mcti/plano-nacional-de-tecnologia-assistiva/pnta_-documento_web.pdf
-Justificativa: mostra que o tema tem política pública federal dedicada. Use para posicionar o Tacta dentro de uma agenda nacional de tecnologia assistiva, não como iniciativa isolada.
+Justificativa: mostra que o tema tem política pública federal dedicada. Traz a estatística mais citável pra abrir a introdução — 35 milhões de brasileiros (18,6% da população) têm deficiência visual, a maior prevalência entre os tipos de deficiência no Censo IBGE 2010 — e cita o fomento a "tecnologias de baixo custo" como prioridade do Eixo I, o que ajuda a posicionar o Tacta (Arduino, baixo custo) dentro de uma agenda nacional já estabelecida, não como iniciativa isolada. Resumo completo em `docs/referencias/artigos-academicos/pnta-mcti.md`.
 
 **CONFORTO, D.; SANTAROSA, L. M. C. (2002)** — sobre Tecnologia Assistiva (TA)
 Justificativa: definição conceitual de TA em diferentes níveis (hardware, software, interfaces). Use para abrir a seção teórica do artigo, definindo formalmente o que é "tecnologia assistiva" antes de posicionar o Tacta dentro dessa categoria.
