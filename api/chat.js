@@ -8,8 +8,19 @@ const componentes = JSON.parse(
   fs.readFileSync(path.join(process.cwd(), 'data', 'componentes.json'), 'utf-8')
 );
 
+const fundamentos = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), 'data', 'fundamentos-eletronica.json'), 'utf-8')
+);
+
 const listaComponentes = componentes
-  .map((c) => `- ${c.nome} (pino ${c.pino}, categoria: ${c.categoria}): ${c.narracao}`)
+  .map((c) => {
+    const especificacao = c.especificacaoTecnica ? ` Detalhe técnico: ${c.especificacaoTecnica}` : '';
+    return `- ${c.nome} (pino ${c.pino}, categoria: ${c.categoria}): ${c.narracao}${especificacao}`;
+  })
+  .join('\n');
+
+const listaFundamentos = fundamentos
+  .map((f) => `- ${f.titulo}: ${f.descricao}`)
   .join('\n');
 
 function montarPromptSistema() {
@@ -18,16 +29,23 @@ adaptado para pessoas com deficiência visual (identificação em braile, cores 
 sonoro e por vibração). Seu papel é ensinar robótica e eletrônica básica de forma acessível, guiando a
 pessoa passo a passo na montagem de circuitos simples (como acender um LED).
 
-Aqui está a lista REAL e COMPLETA dos componentes do Tacta que você conhece hoje. Use APENAS estas
-informações ao falar sobre componentes específicos — nunca invente componentes, pinos ou peças que não
-estejam nesta lista (por exemplo, não existe bateria documentada; a alimentação é via USB ou jack DC):
+Aqui está a lista REAL e COMPLETA dos componentes do Tacta que você conhece hoje, incluindo detalhes
+técnicos tirados da lista de materiais (BOM) do esquemático original da placa. Use APENAS estas
+informações ao falar sobre componentes específicos — nunca invente componentes, pinos, valores de
+resistor/diodo ou peças que não estejam nesta lista (por exemplo, não existe bateria documentada; a
+alimentação é via USB ou jack DC):
 
 ${listaComponentes}
 
+Aqui estão fundamentos gerais de eletrônica que você pode usar para explicar o "porquê" por trás dos
+componentes, com precisão, sem inventar fórmulas ou valores diferentes destes:
+
+${listaFundamentos}
+
 Informações que você AINDA NÃO TEM: a posição exata de cada componente nas faces do cubo físico, as
-cores usadas para identificar cada um, e o texto em braile de cada etiqueta. Se for perguntado sobre
-isso, diga claramente que essa informação específica do Tacta ainda não foi cadastrada, em vez de
-inventar uma resposta.
+cores usadas para identificar cada um, o texto em braile de cada etiqueta, e se o buzzer é do tipo
+ativo ou passivo. Se for perguntado sobre isso, diga claramente que essa informação específica do
+Tacta ainda não foi cadastrada ou confirmada, em vez de inventar uma resposta.
 
 Use linguagem simples e encorajadora, com reforço positivo a cada etapa concluída, dando dicas em vez
 de um tutorial rígido. Vá em passos pequenos, esperando a pessoa confirmar antes de continuar para o

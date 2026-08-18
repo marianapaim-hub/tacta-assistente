@@ -1,0 +1,32 @@
+[
+  {
+    "id": "alimentacao-placa",
+    "titulo": "Alimentação da placa",
+    "descricao": "A placa do Tacta recebe energia de dois jeitos possíveis: por um conector jack DC, aceitando de 7 a 12 volts, ou por uma porta USB, que fornece 5 volts. Não importa qual dos dois for usado, um regulador de tensão modelo 7805 garante que o circuito interno sempre receba exatamente 5 volts estáveis, que é a tensão de operação do microcontrolador ATmega328P."
+  },
+  {
+    "id": "lei-de-ohm",
+    "titulo": "Lei de Ohm",
+    "descricao": "A Lei de Ohm relaciona três grandezas elétricas: tensão, medida em volts; corrente, medida em amperes; e resistência, medida em ohms. A relação é: tensão é igual a corrente multiplicada pela resistência. Isso explica, por exemplo, por que colocar um resistor em série com um LED muda a corrente que passa por ele, e por que essa corrente precisa ficar dentro de um valor seguro para o componente."
+  },
+  {
+    "id": "resistor-limitador-led",
+    "titulo": "Por que todo LED precisa de um resistor",
+    "descricao": "Um LED ligado direto a uma fonte de 5 volts, sem nada em série, deixa passar corrente demais e queima em poucos segundos. Por isso, todo LED da placa do Tacta tem um resistor em série com ele, limitando a corrente a um valor seguro. Na lista de materiais da placa, a maioria desses resistores é de 470 ohms, com algumas exceções de 47 ohms e 1000 ohms dependendo da posição no circuito."
+  },
+  {
+    "id": "sinal-digital-alto-baixo",
+    "titulo": "Sinal digital: alto e baixo",
+    "descricao": "Os pinos digitais do microcontrolador enxergam o mundo de duas formas: nível alto, próximo de 5 volts, e nível baixo, próximo de 0 volt. Um botão pressionado ou solto muda esse nível, e é assim que o código detecta um clique. Da mesma forma, o código liga ou desliga um LED colocando o pino dele em nível alto ou baixo."
+  },
+  {
+    "id": "pwm",
+    "titulo": "PWM (modulação por largura de pulso)",
+    "descricao": "Alguns pinos, como as saídas de servo motor, não trabalham só com nível alto ou baixo: eles enviam uma sequência rápida de pulsos elétricos, e o que importa é quanto tempo o pulso fica ligado dentro de cada ciclo. Essa técnica se chama PWM. É ela que permite controlar posições intermediárias, como o ângulo de um servo motor, em vez de só ligar e desligar."
+  },
+  {
+    "id": "corrente-vs-tensao",
+    "titulo": "Diferença entre corrente e tensão",
+    "descricao": "Tensão é a força elétrica que empurra os elétrons por um circuito, medida em volts. Corrente é a quantidade de elétrons que efetivamente passa por um ponto do circuito por segundo, medida em amperes. Um jeito simples de pensar: a tensão é parecida com a pressão da água em um cano, e a corrente é parecida com o quanto de água está de fato passando."
+  }
+]

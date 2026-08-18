@@ -4,97 +4,111 @@
     "nome": "LED D0",
     "pino": "D0",
     "categoria": "LED",
-    "narracao": "Este é o LED conectado ao pino D zero. LEDs são luzes pequenas que você pode ligar e desligar através de código, muito usadas para dar feedback visual em projetos de robótica."
+    "narracao": "Este é o LED conectado ao pino D zero. LEDs são luzes pequenas que você pode ligar e desligar através de código, muito usadas para dar feedback visual em projetos de robótica.",
+    "especificacaoTecnica": "LED de 3mm em série com um resistor limitador de corrente, que protege o LED de queimar. Segundo a lista de materiais da placa, a maioria desses resistores é de 470 ohms, com algumas exceções de 47 ohms e 1k ohm em posições específicas do circuito."
   },
   {
     "id": "led-d1",
     "nome": "LED D1",
     "pino": "D1",
     "categoria": "LED",
-    "narracao": "Este é o LED conectado ao pino D um, um dos oito LEDs individuais da placa."
+    "narracao": "Este é o LED conectado ao pino D um, um dos oito LEDs individuais da placa.",
+    "especificacaoTecnica": "LED de 3mm em série com um resistor limitador de corrente, majoritariamente de 470 ohms nessa placa."
   },
   {
     "id": "led-d2",
     "nome": "LED D2",
     "pino": "D2",
     "categoria": "LED",
-    "narracao": "Este é o LED conectado ao pino D dois, um dos oito LEDs individuais da placa."
+    "narracao": "Este é o LED conectado ao pino D dois, um dos oito LEDs individuais da placa.",
+    "especificacaoTecnica": "LED de 3mm em série com um resistor limitador de corrente, majoritariamente de 470 ohms nessa placa."
   },
   {
     "id": "led-d3",
     "nome": "LED D3",
     "pino": "D3",
     "categoria": "LED",
-    "narracao": "Este é o LED conectado ao pino D três, um dos oito LEDs individuais da placa."
+    "narracao": "Este é o LED conectado ao pino D três, um dos oito LEDs individuais da placa.",
+    "especificacaoTecnica": "LED de 3mm em série com um resistor limitador de corrente, majoritariamente de 470 ohms nessa placa."
   },
   {
     "id": "led-d4",
     "nome": "LED D4",
     "pino": "D4",
     "categoria": "LED",
-    "narracao": "Este é o LED conectado ao pino D quatro, um dos oito LEDs individuais da placa."
+    "narracao": "Este é o LED conectado ao pino D quatro, um dos oito LEDs individuais da placa.",
+    "especificacaoTecnica": "LED de 3mm em série com um resistor limitador de corrente, majoritariamente de 470 ohms nessa placa."
   },
   {
     "id": "led-d5",
     "nome": "LED D5",
     "pino": "D5",
     "categoria": "LED",
-    "narracao": "Este é o LED conectado ao pino D cinco, um dos oito LEDs individuais da placa."
+    "narracao": "Este é o LED conectado ao pino D cinco, um dos oito LEDs individuais da placa.",
+    "especificacaoTecnica": "LED de 3mm em série com um resistor limitador de corrente, majoritariamente de 470 ohms nessa placa."
   },
   {
     "id": "led-d6",
     "nome": "LED D6",
     "pino": "D6",
     "categoria": "LED",
-    "narracao": "Este é o LED conectado ao pino D seis, um dos oito LEDs individuais da placa."
+    "narracao": "Este é o LED conectado ao pino D seis, um dos oito LEDs individuais da placa.",
+    "especificacaoTecnica": "LED de 3mm em série com um resistor limitador de corrente, majoritariamente de 470 ohms nessa placa."
   },
   {
     "id": "led-d7",
     "nome": "LED D7",
     "pino": "D7",
     "categoria": "LED",
-    "narracao": "Este é o LED conectado ao pino D sete, o último dos oito LEDs individuais da placa."
+    "narracao": "Este é o LED conectado ao pino D sete, o último dos oito LEDs individuais da placa.",
+    "especificacaoTecnica": "LED de 3mm em série com um resistor limitador de corrente, majoritariamente de 470 ohms nessa placa."
   },
   {
     "id": "botao-d8",
     "nome": "Botão 1",
     "pino": "D8",
     "categoria": "Botão",
-    "narracao": "Este é o botão um, conectado ao pino D oito. Botões enviam um sinal quando pressionados, permitindo que o seu programa reaja a uma ação sua."
+    "narracao": "Este é o botão um, conectado ao pino D oito. Botões enviam um sinal quando pressionados, permitindo que o seu programa reaja a uma ação sua.",
+    "especificacaoTecnica": "Push-button simples. Ao ser pressionado, muda o nível de tensão lido pelo pino digital entre alto (perto de 5 volts) e baixo (perto de 0 volt) — é essa mudança de tensão que o código detecta como clique."
   },
   {
     "id": "botao-d9",
     "nome": "Botão 2",
     "pino": "D9",
     "categoria": "Botão",
-    "narracao": "Este é o botão dois, conectado ao pino D nove. Assim como o botão um, ele envia um sinal quando pressionado."
+    "narracao": "Este é o botão dois, conectado ao pino D nove. Assim como o botão um, ele envia um sinal quando pressionado.",
+    "especificacaoTecnica": "Push-button simples. Ao ser pressionado, muda o nível de tensão lido pelo pino digital entre alto (perto de 5 volts) e baixo (perto de 0 volt) — é essa mudança de tensão que o código detecta como clique."
   },
   {
     "id": "servo-d10",
     "nome": "Saída Servo 1",
     "pino": "D10",
     "categoria": "Servo motor",
-    "narracao": "Esta é a saída para o primeiro servo motor, no pino D dez. Servo motores se movem até uma posição específica que você define no código, úteis para criar movimento controlado, como um braço robótico."
+    "narracao": "Esta é a saída para o primeiro servo motor, no pino D dez. Servo motores se movem até uma posição específica que você define no código, úteis para criar movimento controlado, como um braço robótico.",
+    "especificacaoTecnica": "Servo motores costumam operar entre 4,8 e 6 volts e recebem um sinal de controle por largura de pulso (PWM) no pino de dados — é a duração desse pulso que define o ângulo do motor, não uma tensão constante."
   },
   {
     "id": "servo-d11",
     "nome": "Saída Servo 2",
     "pino": "D11",
     "categoria": "Servo motor",
-    "narracao": "Esta é a saída para o segundo servo motor, no pino D onze."
+    "narracao": "Esta é a saída para o segundo servo motor, no pino D onze.",
+    "especificacaoTecnica": "Servo motores costumam operar entre 4,8 e 6 volts e recebem um sinal de controle por largura de pulso (PWM) no pino de dados — é a duração desse pulso que define o ângulo do motor, não uma tensão constante."
   },
   {
     "id": "buzzer-d12",
     "nome": "Buzzer",
     "pino": "D12",
     "categoria": "Som",
-    "narracao": "Este é o buzzer, conectado ao pino D doze através de um jumper. O buzzer emite sons, podendo ser usado para dar alertas sonoros ou tocar melodias simples no seu projeto."
+    "narracao": "Este é o buzzer, conectado ao pino D doze através de um jumper. O buzzer emite sons, podendo ser usado para dar alertas sonoros ou tocar melodias simples no seu projeto.",
+    "especificacaoTecnica": "A lista de materiais da placa registra apenas 'buzzer comum' — ainda não está confirmado se é do tipo ativo (emite um tom fixo ao receber sinal alto) ou passivo (precisa de um sinal de frequência variável via código para tocar notas diferentes). Isso precisa ser confirmado com o grupo antes de ensinar código específico de melodia."
   },
   {
     "id": "led-13",
     "nome": "LED do pino 13",
     "pino": "13",
     "categoria": "LED",
-    "narracao": "Este é o LED extra ligado ao pino treze, o mesmo pino do LED embutido no Arduino UNO original. Diferente do LED de power, que fica sempre aceso enquanto a placa está ligada, este LED não tem uma função fixa: é você quem decide o que ele faz através do seu código. É tradicionalmente usado no primeiro projeto de quem aprende Arduino, o Blink, que liga e desliga esse LED em intervalos regulares, servindo também para confirmar que o seu código está rodando corretamente na placa."
+    "narracao": "Este é o LED extra ligado ao pino treze, o mesmo pino do LED embutido no Arduino UNO original. Diferente do LED de power, que fica sempre aceso enquanto a placa está ligada, este LED não tem uma função fixa: é você quem decide o que ele faz através do seu código. É tradicionalmente usado no primeiro projeto de quem aprende Arduino, o Blink, que liga e desliga esse LED em intervalos regulares, servindo também para confirmar que o seu código está rodando corretamente na placa.",
+    "especificacaoTecnica": "Corresponde à porta PB5 do microcontrolador ATmega328P. Assim como os demais LEDs individuais da placa, opera em série com um resistor limitador de corrente."
   }
 ]
