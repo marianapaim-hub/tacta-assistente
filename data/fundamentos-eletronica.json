@@ -28,5 +28,20 @@
     "id": "corrente-vs-tensao",
     "titulo": "Diferença entre corrente e tensão",
     "descricao": "Tensão é a força elétrica que empurra os elétrons por um circuito, medida em volts. Corrente é a quantidade de elétrons que efetivamente passa por um ponto do circuito por segundo, medida em amperes. Um jeito simples de pensar: a tensão é parecida com a pressão da água em um cano, e a corrente é parecida com o quanto de água está de fato passando."
+  },
+  {
+    "id": "curto-circuito",
+    "titulo": "Por que não pode ligar o fio positivo direto no negativo",
+    "descricao": "Ligar o polo positivo de uma fonte de energia direto no polo negativo, sem nenhum componente pelo meio (como um resistor, LED ou motor), cria um curto-circuito. Pela Lei de Ohm, quanto menor a resistência de um caminho, maior a corrente que passa por ele. Uma ligação direta tem resistência praticamente zero, então a corrente tenta subir a um valor extremamente alto, muito maior do que os fios e a fonte de energia foram projetados para suportar. Isso gera aquecimento rápido, pode danificar a fonte (bateria, pilha ou a porta USB do computador) e, em casos mais sérios, é risco de incêndio. Por isso todo circuito precisa de algum componente que limite a corrente entre o positivo e o negativo, nunca uma ligação direta entre eles."
+  },
+  {
+    "id": "polaridade-leds-diodos",
+    "titulo": "Por que a polaridade importa nos LEDs",
+    "descricao": "Um LED é um tipo de diodo: um componente que só deixa a corrente elétrica passar em um sentido. Ele tem uma perna mais longa, o ânodo, que vai para o positivo, e uma mais curta, o cátodo, que vai para o negativo. Se um LED for ligado ao contrário, ele simplesmente não acende, mas, diferente de um curto-circuito, isso não é perigoso nas tensões baixas de um projeto como o Tacta (5 volts): o LED apenas bloqueia a corrente. Um curto-circuito é sempre perigoso porque não existe nada bloqueando ou limitando a corrente."
+  },
+  {
+    "id": "circuito-fechado-terra",
+    "titulo": "Circuito fechado e o papel do terra (GND)",
+    "descricao": "Para a corrente elétrica circular, precisa existir um caminho fechado: sai do polo positivo da fonte, passa pelos componentes, e retorna ao polo negativo, chamado de terra ou GND (de 'ground', em inglês). Se esse caminho for interrompido em qualquer ponto, como um fio solto ou um botão aberto, o circuito fica aberto e nada funciona, mesmo com a fonte de energia ligada. Por isso todo componente precisa estar conectado tanto a um pino de sinal quanto a um ponto de terra para funcionar."
   }
 ]
