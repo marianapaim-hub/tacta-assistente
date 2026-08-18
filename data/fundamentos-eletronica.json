@@ -63,5 +63,40 @@
     "id": "buzzer-ativo-vs-passivo",
     "titulo": "Diferença entre buzzer ativo e passivo",
     "descricao": "Um buzzer ativo tem um circuito oscilador embutido: basta aplicar uma tensão constante nele que ele já emite um tom fixo sozinho, sem precisar de um sinal variável no código. Um buzzer passivo não tem esse oscilador interno; ele só reproduz o som se receber um sinal elétrico que já varie na frequência desejada, geralmente gerado pela função tone() do Arduino, o que permite tocar notas diferentes e até melodias. Antes de escrever código para tocar uma melodia em um buzzer, é importante confirmar qual dos dois tipos está sendo usado, porque o código para cada um é diferente."
+  },
+  {
+    "id": "resistores-serie-paralelo",
+    "titulo": "Resistores em série e em paralelo",
+    "descricao": "Quando dois resistores são ligados em série, um depois do outro no mesmo caminho, suas resistências se somam, então a resistência total sempre aumenta. Quando são ligados em paralelo, cada um forma um caminho separado para a corrente, e a resistência total do conjunto fica menor do que a do menor resistor sozinho, porque a corrente tem mais de um caminho para passar. Entender essa diferença ajuda a prever como a corrente vai se dividir entre partes de um circuito com mais de um componente."
+  },
+  {
+    "id": "o-que-e-microcontrolador",
+    "titulo": "O que é um microcontrolador",
+    "descricao": "Um microcontrolador é um pequeno chip que reúne, em uma única peça, um processador, memória para guardar o código e pinos que conseguem ler sinais (entradas) e controlar componentes (saídas). Diferente de um computador comum, ele não roda um sistema operacional com vários programas ao mesmo tempo: ele executa um único programa, de forma repetida, dedicado a controlar aquele circuito específico. O ATmega328P, usado na placa do Tacta, é um exemplo de microcontrolador, o mesmo usado no Arduino UNO."
+  },
+  {
+    "id": "estrutura-programa-arduino",
+    "titulo": "A estrutura de um programa Arduino: setup e loop",
+    "descricao": "Todo programa escrito para Arduino tem duas partes obrigatórias. A função setup roda uma única vez, assim que a placa liga ou é reiniciada, e é onde se configuram os pinos, decidindo quais são entrada e quais são saída. A função loop roda em seguida, repetidamente, para sempre, enquanto a placa estiver ligada, e é onde fica o comportamento contínuo do projeto, como verificar se um botão foi pressionado ou piscar um LED. Entender essa divisão ajuda a decidir em qual das duas partes cada linha de código deve entrar."
+  },
+  {
+    "id": "variaveis-em-programacao",
+    "titulo": "O que é uma variável no código",
+    "descricao": "Uma variável é um espaço nomeado na memória do microcontrolador usado para guardar um valor que pode mudar enquanto o programa roda, como o estado atual de um botão ou a posição de um servo motor. Em vez de o código verificar o pino toda vez que precisa saber esse valor, ele pode ler o pino uma vez, guardar o resultado em uma variável, e usar essa variável várias vezes depois. Isso deixa o código mais organizado e permite comparar valores lidos em momentos diferentes, como perceber que um botão mudou de solto para pressionado."
+  },
+  {
+    "id": "sinal-analogico-vs-digital",
+    "titulo": "Diferença entre sinal analógico e digital",
+    "descricao": "Um sinal digital só assume dois valores possíveis, alto ou baixo, sem meio-termo. Um sinal analógico pode assumir qualquer valor dentro de uma faixa contínua, como o volume de um som ou a intensidade de uma luz variando suavemente. Um microcontrolador, por trabalhar internamente só com sinais digitais, precisa de técnicas como o PWM para simular um comportamento analógico, ou de um conversor analógico-digital para ler um sinal analógico e transformá-lo em um número que o código consiga usar."
+  },
+  {
+    "id": "eletricidade-estatica-componentes",
+    "titulo": "Cuidado com eletricidade estática nos componentes",
+    "descricao": "O corpo humano pode acumular uma pequena carga de eletricidade estática, por exemplo ao caminhar sobre um carpete, e descarregá-la ao tocar em um objeto metálico. Componentes eletrônicos sensíveis, como microcontroladores e circuitos integrados, podem ser danificados por essa descarga, mesmo que ela seja pequena demais para a pessoa sentir. Por isso, antes de manusear uma placa ou componente fora de sua proteção, é uma boa prática tocar em uma superfície metálica aterrada, para descarregar a eletricidade estática do corpo antes do contato."
+  },
+  {
+    "id": "bateria-e-polaridade",
+    "titulo": "Como identificar a polaridade em pilhas e baterias",
+    "descricao": "Toda pilha ou bateria tem um terminal positivo e um terminal negativo, e não funciona corretamente se ligada ao contrário. Em pilhas comuns, o terminal positivo costuma ser o lado com uma pequena saliência, marcado com o símbolo mais, e o negativo é o lado achatado, marcado com o símbolo menos. Em baterias com conector, os fios geralmente seguem uma convenção de cores, com vermelho para o positivo e preto para o negativo, mas o ideal é sempre conferir a marcação exata da bateria em uso, porque essa convenção de cores não é uma regra universal."
   }
 ]
