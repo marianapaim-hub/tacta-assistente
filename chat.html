@@ -9,13 +9,60 @@
 <body>
   <a class="pular-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
-  <header>
-    <h1>Chat com a IA</h1>
-    <p><a href="index.html">&larr; Voltar ao início</a></p>
+  <header class="cabecalho">
+    <div class="faixa-gradiente"></div>
+    <div class="cabecalho-conteudo">
+      <a class="logo" href="index.html">
+        <span class="logo-marca" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        Assistente Tacta
+      </a>
+      <nav class="nav-principal" aria-label="Navegação principal">
+        <a href="audiodescricao.html">Audiodescrição</a>
+        <a href="chat.html" aria-current="page">Chat com a IA</a>
+      </nav>
+      <div class="cabecalho-acoes">
+        <div class="controle-texto">
+          <button type="button" id="botao-texto-menor" aria-label="Diminuir o tamanho do texto da página">A−</button>
+          <button type="button" id="botao-texto-maior" aria-label="Aumentar o tamanho do texto da página">A+</button>
+        </div>
+        <div class="menu-perfil">
+          <button type="button" class="botao-perfil" id="botao-perfil" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar" aria-hidden="true" data-perfil-inicial>T</span>
+            <span data-perfil-nome>visitante</span>
+            <span class="seta" aria-hidden="true">▼</span>
+          </button>
+          <div class="painel-perfil" id="painel-perfil" role="menu" aria-label="Menu de conta" hidden>
+            <div class="painel-perfil-topo">
+              <strong>Perfil</strong>
+              <p>Salvo só neste navegador. Sem senha nem e-mail.</p>
+            </div>
+            <form class="painel-perfil-corpo" id="form-perfil">
+              <label for="campo-nome-perfil">Como posso te chamar?</label>
+              <input type="text" id="campo-nome-perfil" autocomplete="off">
+              <button type="submit">Salvar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main id="conteudo-principal">
-    <p>Pergunte sobre robótica ou peça pra te guiar na montagem de um circuito simples, como acender um LED.</p>
+    <div id="tela-vazia">
+      <div class="hero">
+        <span class="selo"><span class="ponto" aria-hidden="true"></span>Chat com a IA</span>
+        <h1>Pergunte o que quiser, <span class="gradiente" data-perfil-nome>visitante</span>.</h1>
+        <p>Peça pra te guiar na montagem de um circuito com o cubo — passo a passo, em voz alta.</p>
+      </div>
+
+      <h2 style="font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cor-lilas); margin: 1.75rem 0 0.75rem;">Comece por aqui</h2>
+      <ul class="chips-sugestao">
+        <li><button type="button" data-sugestao="Me ensina a acender um LED">Me ensina a acender um LED</button></li>
+        <li><button type="button" data-sugestao="O que é PWM?">O que é PWM?</button></li>
+        <li><button type="button" data-sugestao="Como uso o buzzer?">Como uso o buzzer?</button></li>
+        <li><button type="button" data-sugestao="Ler um botão do cubo">Ler um botão do cubo</button></li>
+      </ul>
+    </div>
 
     <div class="acoes-narracao">
       <button type="button" id="botao-parar">Parar narração</button>
@@ -27,12 +74,14 @@
 
     <form id="formulario-chat">
       <label for="campo-mensagem">Sua mensagem</label>
-      <input type="text" id="campo-mensagem" name="mensagem" autocomplete="off" required>
+      <input type="text" id="campo-mensagem" name="mensagem" autocomplete="off" required placeholder="Escreva sua pergunta…">
       <button type="button" id="botao-microfone" aria-pressed="false">🎤 Falar</button>
       <button type="submit">Enviar</button>
     </form>
   </main>
 
+  <script src="js/perfil.js"></script>
+  <script src="js/narrador.js"></script>
   <script src="js/chat.js"></script>
 </body>
 </html>

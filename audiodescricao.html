@@ -9,25 +9,138 @@
 <body>
   <a class="pular-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
-  <header>
-    <h1>Audiodescrição dos componentes</h1>
-    <p><a href="index.html">&larr; Voltar ao início</a></p>
+  <header class="cabecalho">
+    <div class="faixa-gradiente"></div>
+    <div class="cabecalho-conteudo">
+      <a class="logo" href="index.html">
+        <span class="logo-marca" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        Assistente Tacta
+      </a>
+      <nav class="nav-principal" aria-label="Navegação principal">
+        <a href="audiodescricao.html" aria-current="page">Audiodescrição</a>
+        <a href="chat.html">Chat com a IA</a>
+      </nav>
+      <div class="cabecalho-acoes">
+        <div class="controle-texto">
+          <button type="button" id="botao-texto-menor" aria-label="Diminuir o tamanho do texto da página">A−</button>
+          <button type="button" id="botao-texto-maior" aria-label="Aumentar o tamanho do texto da página">A+</button>
+        </div>
+        <div class="menu-perfil">
+          <button type="button" class="botao-perfil" id="botao-perfil" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar" aria-hidden="true" data-perfil-inicial>T</span>
+            <span data-perfil-nome>visitante</span>
+            <span class="seta" aria-hidden="true">▼</span>
+          </button>
+          <div class="painel-perfil" id="painel-perfil" role="menu" aria-label="Menu de conta" hidden>
+            <div class="painel-perfil-topo">
+              <strong>Perfil</strong>
+              <p>Salvo só neste navegador. Sem senha nem e-mail.</p>
+            </div>
+            <form class="painel-perfil-corpo" id="form-perfil">
+              <label for="campo-nome-perfil">Como posso te chamar?</label>
+              <input type="text" id="campo-nome-perfil" autocomplete="off">
+              <button type="submit">Salvar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main id="conteudo-principal">
-    <p>Escolha um componente na lista abaixo para ouvir a narração sobre ele.</p>
-
-    <div class="acoes-narracao">
-      <button type="button" id="botao-parar">Parar narração</button>
+    <div class="hero">
+      <span class="selo"><span class="ponto" aria-hidden="true"></span>Audiodescrição por componente</span>
+      <h1>Oi, <span data-perfil-nome>visitante</span>. Ouça o cubo <span class="gradiente">peça por peça</span>.</h1>
+      <p>Escolha um componente na lista e o site narra em voz alta o que ele é e em qual pino está ligado.</p>
     </div>
 
-    <p id="status-narracao" role="status" aria-live="polite"></p>
+    <div class="layout-audiodescricao">
+      <section aria-label="Componentes do Tacta">
+        <div class="cartao-status" id="cartao-status">
+          <span class="status-texto">
+            <span class="ponto" aria-hidden="true"></span>
+            <span id="status-narracao" role="status" aria-live="polite">Nada sendo narrado. Escolha um componente.</span>
+          </span>
+          <button type="button" id="botao-parar">Parar</button>
+        </div>
 
-    <ul id="lista-componentes" aria-label="Lista de componentes do Tacta">
-      <!-- Preenchido dinamicamente por js/audiodescricao.js -->
-    </ul>
+        <ul class="lista-componentes" id="lista-componentes" aria-label="Lista de componentes"></ul>
+      </section>
+
+      <section aria-label="Diagrama do cubo">
+        <div class="painel-diagrama">
+          <div class="painel-diagrama-topo">
+            <span>Face do cubo · apoio visual</span>
+            <span class="controle-zoom">
+              <button type="button" id="botao-zoom-menos" aria-label="Diminuir o zoom do diagrama">−</button>
+              <span class="zoom-valor" id="zoom-valor" aria-hidden="true">100%</span>
+              <button type="button" id="botao-zoom-mais" aria-label="Aumentar o zoom do diagrama">+</button>
+            </span>
+          </div>
+          <div class="palco-diagrama">
+            <div id="diagrama-escala" style="transform: scale(1); transform-origin: center; transition: transform 150ms;">
+              <svg width="360" height="360" viewBox="0 0 400 400" role="img" aria-label="Diagrama da face do cubo Tacta: fileira de oito LEDs D0 a D7, dois botões D8 e D9, duas saídas de servo D10 e D11, buzzer D12 e LED do pino 13.">
+                <defs>
+                  <linearGradient id="bordaCubo" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#cdb4f0"></stop>
+                    <stop offset="100%" stop-color="#6fc02d"></stop>
+                  </linearGradient>
+                </defs>
+                <rect x="16" y="16" width="368" height="368" rx="30" fill="#0d0a15" stroke="url(#bordaCubo)" stroke-width="2.5"></rect>
+                <text x="40" y="58" font-size="12" font-weight="800" fill="#cdb4f0" letter-spacing="2.4">TACTA · FACE A</text>
+                <g stroke="#9ee356" stroke-width="2" fill="#6fc02d">
+                  <circle cx="56" cy="118" r="13"></circle><circle cx="97" cy="118" r="13"></circle>
+                  <circle cx="138" cy="118" r="13"></circle><circle cx="179" cy="118" r="13"></circle>
+                  <circle cx="220" cy="118" r="13"></circle><circle cx="261" cy="118" r="13"></circle>
+                  <circle cx="302" cy="118" r="13"></circle><circle cx="343" cy="118" r="13"></circle>
+                </g>
+                <g font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">
+                  <text x="56" y="148">D0</text><text x="97" y="148">D1</text><text x="138" y="148">D2</text><text x="179" y="148">D3</text>
+                  <text x="220" y="148">D4</text><text x="261" y="148">D5</text><text x="302" y="148">D6</text><text x="343" y="148">D7</text>
+                </g>
+                <rect x="40" y="186" width="56" height="56" rx="15" fill="#2a1f45" stroke="#cdb4f0" stroke-width="2"></rect>
+                <rect x="108" y="186" width="56" height="56" rx="15" fill="#2a1f45" stroke="#cdb4f0" stroke-width="2"></rect>
+                <g font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">
+                  <text x="68" y="260">D8</text><text x="136" y="260">D9</text>
+                </g>
+                <rect x="212" y="186" width="66" height="56" rx="15" fill="#17112a" stroke="#cdb4f0" stroke-width="2"></rect>
+                <rect x="292" y="186" width="66" height="56" rx="15" fill="#17112a" stroke="#cdb4f0" stroke-width="2"></rect>
+                <g stroke="#9ee356" stroke-width="2">
+                  <line x1="226" y1="200" x2="264" y2="200"></line><line x1="226" y1="214" x2="264" y2="214"></line><line x1="226" y1="228" x2="264" y2="228"></line>
+                  <line x1="306" y1="200" x2="344" y2="200"></line><line x1="306" y1="214" x2="344" y2="214"></line><line x1="306" y1="228" x2="344" y2="228"></line>
+                </g>
+                <g font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">
+                  <text x="245" y="260">D10</text><text x="325" y="260">D11</text>
+                </g>
+                <circle cx="72" cy="316" r="26" fill="#2a1f45" stroke="#cdb4f0" stroke-width="2"></circle>
+                <circle cx="72" cy="316" r="9" fill="#6fc02d"></circle>
+                <text x="72" y="364" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">D12</text>
+                <circle cx="300" cy="316" r="17" fill="#6fc02d" stroke="#9ee356" stroke-width="2"></circle>
+                <text x="300" y="364" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">13</text>
+                <rect id="marca-destaque" x="0" y="0" width="0" height="0" rx="18" fill="none" stroke="#ffffff" stroke-width="4" opacity="0"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="painel-diagrama painel-narracao-texto" style="margin-top: 1.25rem; border-radius: 1.5rem;">
+          <div class="rotulo">Texto da narração</div>
+          <div class="titulo" id="narracao-titulo">Nenhum componente selecionado</div>
+          <p id="narracao-texto">Escolha um componente na lista: o texto lido em voz alta aparece aqui também.</p>
+        </div>
+      </section>
+    </div>
   </main>
 
+  <footer>
+    <div class="rodape-conteudo">
+      <span>O Tacta é um projeto coletivo de 4 integrantes. Este assistente é um projeto individual complementar.</span>
+      <a href="chat.html">Ir para o chat com a IA →</a>
+    </div>
+  </footer>
+
+  <script src="js/perfil.js"></script>
+  <script src="js/narrador.js"></script>
   <script src="js/audiodescricao.js"></script>
 </body>
 </html>

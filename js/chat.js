@@ -7,20 +7,22 @@ const historico = document.getElementById('historico-chat');
 const status = document.getElementById('status-chat');
 const botaoParar = document.getElementById('botao-parar');
 const botaoMicrofone = document.getElementById('botao-microfone');
-
-function narrar(texto) {
-  window.speechSynthesis.cancel();
-  const fala = new SpeechSynthesisUtterance(texto);
-  fala.lang = 'pt-BR';
-  window.speechSynthesis.speak(fala);
-}
+const telaVazia = document.getElementById('tela-vazia');
 
 function adicionarMensagem(texto, autor) {
+  if (telaVazia) telaVazia.hidden = true;
   const bloco = document.createElement('p');
   bloco.className = autor === 'usuario' ? 'mensagem-usuario' : 'mensagem-ia';
   bloco.textContent = `${autor === 'usuario' ? 'Você' : 'Tacta'}: ${texto}`;
   historico.appendChild(bloco);
 }
+
+document.querySelectorAll('[data-sugestao]').forEach((chip) => {
+  chip.addEventListener('click', () => {
+    campoMensagem.value = chip.dataset.sugestao;
+    formulario.requestSubmit();
+  });
+});
 
 botaoParar.addEventListener('click', () => {
   window.speechSynthesis.cancel();

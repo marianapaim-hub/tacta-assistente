@@ -7,10 +7,13 @@
 | Onde | O que é |
 |---|---|
 | `index.html` | Página inicial do site |
-| `audiodescricao.html` + `js/audiodescricao.js` | Tela de audiodescrição por componente (botões nomeados, um por face/componente do Tacta) |
-| `chat.html` | Tela de chat com IA |
-| `css/style.css` | Estilos do site |
-| `data/componentes.json` | Fonte única de dados dos componentes (narração), usada pela audiodescrição e futuramente pelo chat — ver `data/README.md` para status atual do que falta preencher |
+| `audiodescricao.html` + `js/audiodescricao.js` | Tela de audiodescrição por componente: lista com estados Ouvir/Narrando/Ouvido + diagrama SVG do cubo com zoom e destaque do componente ativo |
+| `chat.html` | Tela de chat com IA: hero com nome personalizado, chips de sugestão rápida, bolhas de conversa |
+| `css/style.css` | Estilos do site — tema escuro roxo/verde (redesenhado a partir do briefing em `docs/briefing-design-interface.md`, gerado com Claude Design) |
+| `js/narrador.js` | Narração compartilhada (Web Speech API) usada pelo chat e pela audiodescrição — escolhe ativamente a melhor voz pt-BR disponível no navegador em vez da voz padrão robótica |
+| `js/perfil.js` | Perfil leve compartilhado pelas 3 páginas: nome salvo em localStorage (sem senha/e-mail), menu de conta e controle de tamanho de texto A-/A+ |
+| `data/componentes.json` | Fonte única de dados dos componentes (narração + `especificacaoTecnica` com dados reais do BOM da placa), usada pela audiodescrição e pelo chat — ver `data/README.md` para status atual do que falta preencher |
+| `data/fundamentos-eletronica.json` | Conceitos gerais de eletrônica (Lei de Ohm, PWM, sinal digital, etc.) usados pelo chat para explicar o "porquê" por trás dos componentes, sem inventar fórmulas |
 | `scripts/dev-server.js` | Servidor local de desenvolvimento |
 | `uShalom.pdf` | PDF original da documentação técnica da placa-base, enviado pela Mariana |
 
@@ -41,3 +44,8 @@
 |---|---|
 | `README.md` (raiz) | Visão geral do projeto, objetivo do assistente, público-alvo, decisão de usar Web Speech API, estrutura de pastas |
 | `data/README.md` | O que já está pronto e o que falta em `componentes.json` |
+| `docs/briefing-design-interface.md` | Briefing detalhado pra colar em ferramenta de geração de UI (Lovable, v0, Figma AI): contexto, acessibilidade não-negociável, paleta de cores e porquê, telas Home/Audiodescrição e Chat, perfil leve → login futuro |
+
+## Site publicado
+
+- **Link ao vivo:** https://tacta-assistente.vercel.app — atualiza sozinho a cada push pro branch `main` do GitHub (`github.com/marianapaim-hub/tacta-assistente`). Pra ver mudanças locais no ar, é preciso commitar e dar push.
