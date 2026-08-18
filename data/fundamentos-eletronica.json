@@ -43,5 +43,25 @@
     "id": "circuito-fechado-terra",
     "titulo": "Circuito fechado e o papel do terra (GND)",
     "descricao": "Para a corrente elétrica circular, precisa existir um caminho fechado: sai do polo positivo da fonte, passa pelos componentes, e retorna ao polo negativo, chamado de terra ou GND (de 'ground', em inglês). Se esse caminho for interrompido em qualquer ponto, como um fio solto ou um botão aberto, o circuito fica aberto e nada funciona, mesmo com a fonte de energia ligada. Por isso todo componente precisa estar conectado tanto a um pino de sinal quanto a um ponto de terra para funcionar."
+  },
+  {
+    "id": "resistor-pull-up",
+    "titulo": "Por que um botão precisa de um resistor de pull-up",
+    "descricao": "Um pino digital configurado para ler um botão precisa estar sempre em nível alto ou baixo, nunca 'boiando' sem nenhum valor definido. Um resistor de pull-up conecta o pino ao positivo através de uma resistência alta, garantindo que ele fique em nível alto quando o botão está solto. Quando o botão é pressionado, ele conecta o pino diretamente ao terra, e o pino passa a ler nível baixo. É por isso que, em código Arduino, declarar um botão com pinMode(pino, INPUT_PULLUP) faz o botão pressionado ser lido como LOW, e o botão solto como HIGH, o que pode parecer invertido para quem está começando."
+  },
+  {
+    "id": "debounce-botao",
+    "titulo": "Ruído mecânico do botão (debounce)",
+    "descricao": "Quando um botão físico é pressionado ou solto, o contato metálico interno vibra por alguns milissegundos antes de se estabilizar, fazendo o pino registrar várias mudanças rápidas de nível em vez de uma só. Isso se chama bouncing, ou ruído mecânico. Sem tratar esse efeito, um único clique pode ser lido pelo código como vários cliques seguidos. A solução mais simples é o debounce por software: esperar um pequeno intervalo de tempo, como 50 milissegundos, depois de detectar a mudança, antes de considerar o clique válido."
+  },
+  {
+    "id": "servo-motor-por-dentro",
+    "titulo": "Como um servo motor funciona por dentro",
+    "descricao": "Um servo motor combina, na mesma caixa, um pequeno motor elétrico, um conjunto de engrenagens que reduz a velocidade e aumenta a força, e um potenciômetro que informa a um circuito de controle interno a posição atual do eixo. Esse circuito compara a posição atual com a posição pedida pelo sinal PWM recebido e liga o motor no sentido necessário até as duas coincidirem, parando exatamente no ângulo desejado. É essa realimentação constante que permite pedir uma posição específica, como noventa graus, em vez de só ligar e desligar o motor."
+  },
+  {
+    "id": "buzzer-ativo-vs-passivo",
+    "titulo": "Diferença entre buzzer ativo e passivo",
+    "descricao": "Um buzzer ativo tem um circuito oscilador embutido: basta aplicar uma tensão constante nele que ele já emite um tom fixo sozinho, sem precisar de um sinal variável no código. Um buzzer passivo não tem esse oscilador interno; ele só reproduz o som se receber um sinal elétrico que já varie na frequência desejada, geralmente gerado pela função tone() do Arduino, o que permite tocar notas diferentes e até melodias. Antes de escrever código para tocar uma melodia em um buzzer, é importante confirmar qual dos dois tipos está sendo usado, porque o código para cada um é diferente."
   }
 ]
