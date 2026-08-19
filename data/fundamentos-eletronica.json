@@ -98,5 +98,105 @@
     "id": "bateria-e-polaridade",
     "titulo": "Como identificar a polaridade em pilhas e baterias",
     "descricao": "Toda pilha ou bateria tem um terminal positivo e um terminal negativo, e não funciona corretamente se ligada ao contrário. Em pilhas comuns, o terminal positivo costuma ser o lado com uma pequena saliência, marcado com o símbolo mais, e o negativo é o lado achatado, marcado com o símbolo menos. Em baterias com conector, os fios geralmente seguem uma convenção de cores, com vermelho para o positivo e preto para o negativo, mas o ideal é sempre conferir a marcação exata da bateria em uso, porque essa convenção de cores não é uma regra universal."
+  },
+  {
+    "id": "potencia-eletrica",
+    "titulo": "O que é potência elétrica",
+    "descricao": "Potência elétrica é a quantidade de energia consumida ou transformada por um componente a cada segundo, medida em watts. Ela é calculada multiplicando a tensão pela corrente que passa pelo componente. Um resistor, por exemplo, transforma parte da energia elétrica em calor, e quanto maior a potência dissipada nele, mais quente ele fica, o que explica por que resistores têm um limite de potência que não pode ser ultrapassado sem danificá-los."
+  },
+  {
+    "id": "corrente-continua-alternada",
+    "titulo": "Corrente contínua e corrente alternada",
+    "descricao": "Na corrente contínua, os elétrons sempre se movem no mesmo sentido, e a tensão mantém a mesma polaridade ao longo do tempo; é o tipo de corrente fornecido por pilhas, baterias e pela porta USB. Na corrente alternada, o sentido da corrente e a polaridade da tensão se invertem várias vezes por segundo; é o tipo de corrente que sai das tomadas residenciais. Circuitos com microcontrolador, como o do Tacta, trabalham em corrente contínua, por isso a energia da tomada precisa passar por uma fonte que converte corrente alternada em contínua antes de chegar à placa."
+  },
+  {
+    "id": "o-que-e-capacitor",
+    "titulo": "O que é um capacitor",
+    "descricao": "Um capacitor é um componente que armazena energia elétrica temporariamente em forma de campo elétrico, e a libera quando necessário. Uma de suas funções mais comuns em circuitos com microcontrolador é estabilizar a tensão de alimentação, absorvendo pequenas variações e picos, o que evita que oscilações na fonte de energia atrapalhem o funcionamento do circuito. Diferente de uma bateria, um capacitor armazena e libera energia muito rapidamente, mas em quantidades bem menores."
+  },
+  {
+    "id": "o-que-e-transistor",
+    "titulo": "O que é um transistor",
+    "descricao": "Um transistor funciona como uma espécie de interruptor eletrônico controlado por corrente ou tensão: uma pequena corrente aplicada em um dos seus terminais controla uma corrente bem maior passando pelos outros dois. É essa propriedade que permite que um pino de microcontrolador, capaz de fornecer pouquíssima corrente, controle indiretamente componentes que precisam de muito mais energia do que o pino consegue entregar sozinho, como motores mais potentes ou lâmpadas. Transistores também são a base de construção dos próprios microcontroladores, que contêm milhões deles."
+  },
+  {
+    "id": "o-que-e-diodo-retificador",
+    "titulo": "O que é um diodo",
+    "descricao": "Um diodo é um componente que deixa a corrente elétrica passar em apenas um sentido e bloqueia o sentido contrário. O LED é um tipo específico de diodo que também emite luz quando a corrente passa por ele, mas existem diodos comuns, sem essa função luminosa, usados por exemplo para proteger um circuito de ser ligado com a polaridade invertida, ou para converter corrente alternada em corrente contínua dentro de uma fonte de energia."
+  },
+  {
+    "id": "efeito-joule-aquecimento",
+    "titulo": "Por que componentes elétricos esquentam (efeito Joule)",
+    "descricao": "Sempre que uma corrente elétrica encontra resistência ao passar por um material, parte da energia elétrica se transforma em calor; esse fenômeno é chamado de efeito Joule. É o mesmo princípio usado de propósito em chuveiros elétricos e ferros de passar, mas em componentes eletrônicos ele costuma ser um efeito indesejado: quanto maior a corrente e a resistência, mais o componente esquenta, e calor em excesso pode danificar peças sensíveis. É por isso que limitar a corrente com resistores adequados, como no caso dos LEDs, também ajuda a manter os componentes em uma temperatura segura."
+  },
+  {
+    "id": "frequencia-hertz",
+    "titulo": "O que é frequência (Hertz)",
+    "descricao": "Frequência é o número de vezes que um evento que se repete acontece a cada segundo, medida em Hertz. Em eletrônica, costuma se referir a quantos ciclos completos um sinal elétrico repete por segundo, como os pulsos de um sinal PWM ou a onda sonora gerada por um buzzer. Um som mais agudo corresponde a uma frequência mais alta, e um som mais grave, a uma frequência mais baixa; é por isso que a função tone() do Arduino recebe um valor de frequência para decidir qual nota o buzzer deve tocar."
+  },
+  {
+    "id": "estruturas-condicionais",
+    "titulo": "O que são estruturas condicionais (if/else) no código",
+    "descricao": "Uma estrutura condicional permite que o programa tome decisões, executando um trecho de código só se uma condição for verdadeira, e outro trecho diferente caso contrário. Em Arduino, isso é escrito com if e else: por exemplo, o código pode verificar se o valor lido de um botão é LOW, e se for, ligar um LED; caso contrário, mantê-lo apagado. Sem estruturas condicionais, um programa só conseguiria repetir sempre a mesma sequência de ações, sem reagir de forma diferente a situações diferentes."
+  },
+  {
+    "id": "estruturas-de-repeticao",
+    "titulo": "O que são estruturas de repetição (for/while) no código",
+    "descricao": "Além do loop principal do Arduino, que repete o programa inteiro, existem estruturas de repetição menores dentro do código, como for e while, que repetem um trecho específico de instruções um número determinado de vezes ou enquanto uma condição continuar verdadeira. Um exemplo é usar um for para piscar um LED exatamente cinco vezes seguidas antes de continuar para a próxima parte do código, em vez de escrever a mesma instrução de ligar e desligar repetidamente."
+  },
+  {
+    "id": "o-que-e-funcao-programacao",
+    "titulo": "O que é uma função em programação",
+    "descricao": "Uma função é um bloco de código nomeado que executa uma tarefa específica e pode ser chamado sempre que essa tarefa for necessária, em vez de reescrever as mesmas instruções várias vezes no programa. setup e loop são exemplos de funções que o Arduino já espera que existam, mas também é possível criar funções próprias, como uma função que pisca um LED um número de vezes, e chamá-la de diferentes pontos do código sempre que esse comportamento for necessário."
+  },
+  {
+    "id": "o-que-e-algoritmo",
+    "titulo": "O que é um algoritmo",
+    "descricao": "Um algoritmo é uma sequência ordenada e finita de passos que resolve um problema ou realiza uma tarefa específica, de um jeito claro o suficiente para ser seguido à risca. Um programa de computador é basicamente um algoritmo escrito em uma linguagem que o computador ou microcontrolador consegue entender e executar. Antes de escrever o código para um circuito, pensar no algoritmo em palavras simples, como os passos para acender um LED quando um botão é pressionado, ajuda a organizar as ideias antes de traduzi-las em código."
+  },
+  {
+    "id": "entrada-e-saida-pinos",
+    "titulo": "Diferença entre pino de entrada e pino de saída",
+    "descricao": "Um pino configurado como saída, com pinMode(pino, OUTPUT), é usado pelo código para enviar um sinal elétrico para fora, controlando um componente como um LED ou um servo motor. Um pino configurado como entrada, com pinMode(pino, INPUT) ou pinMode(pino, INPUT_PULLUP), é usado para ler um sinal elétrico que vem de fora, como o estado de um botão. Definir corretamente cada pino como entrada ou saída é um dos primeiros passos de qualquer programa, geralmente feito dentro da função setup."
+  },
+  {
+    "id": "o-que-e-multimetro",
+    "titulo": "O que é um multímetro e para que serve",
+    "descricao": "Um multímetro é um instrumento de medição que consegue medir, entre outras grandezas, tensão, corrente e resistência em um circuito, geralmente bastando trocar o modo de medição e a posição das pontas de prova. É uma ferramenta essencial para verificar se um circuito está recebendo a tensão esperada, se um resistor tem o valor correto, ou se existe continuidade elétrica entre dois pontos, ajudando a identificar problemas antes ou depois de montar um circuito."
+  },
+  {
+    "id": "solda-conexoes-placa",
+    "titulo": "O que é solda e por que os componentes ficam presos na placa",
+    "descricao": "Solda é uma liga metálica com baixo ponto de fusão que, quando derretida com um ferro de solda e aplicada sobre o encontro entre um componente e a placa de circuito, esfria e forma uma conexão elétrica sólida e permanente entre os dois. É essa conexão soldada que garante tanto a fixação física do componente quanto o caminho elétrico correto entre ele e o restante do circuito, sem depender de fios soltos ou encaixes que podem se desconectar com o manuseio."
+  },
+  {
+    "id": "o-que-e-protoboard",
+    "titulo": "O que é uma protoboard (placa de ensaio)",
+    "descricao": "Uma protoboard, também chamada de placa de ensaio, é uma placa com furos conectados internamente em fileiras, que permite montar e testar um circuito encaixando componentes e fios, sem precisar soldar nada. Isso torna muito mais fácil experimentar diferentes ligações, corrigir erros e reaproveitar os mesmos componentes em vários circuitos diferentes, sendo por isso a ferramenta mais comum para prototipar um circuito antes de montá-lo de forma definitiva, soldada, em uma placa permanente."
+  },
+  {
+    "id": "o-que-e-jumper",
+    "titulo": "O que é um fio jumper",
+    "descricao": "Um jumper é um pequeno fio usado para fazer uma conexão elétrica direta entre dois pontos de um circuito, muito comum em protoboards e em pequenas ligações dentro de uma placa já montada, como a conexão entre o buzzer e seu pino de sinal na placa do Tacta. Jumpers geralmente têm conectores prontos nas pontas, machos ou fêmeas, o que permite encaixá-los diretamente em pinos e furos sem precisar de ferramentas."
+  },
+  {
+    "id": "aterramento-comum",
+    "titulo": "Por que vários componentes compartilham o mesmo terra",
+    "descricao": "Quando um circuito tem vários componentes, todos costumam se conectar ao mesmo ponto de terra (GND) da placa, formando o que se chama de terra comum ou referência comum. Isso é necessário porque a tensão de um sinal só faz sentido quando comparada a uma referência: dizer que um pino está em 5 volts só é útil se todos os componentes concordarem sobre onde fica o 0 volt. Sem um terra comum entre eles, sinais de diferentes partes do circuito não poderiam ser comparados nem combinados corretamente."
+  },
+  {
+    "id": "inversao-fios-motor-dc",
+    "titulo": "O que acontece se inverter os fios de um motor DC",
+    "descricao": "Um motor de corrente contínua (DC) gira em um sentido quando a tensão é aplicada em uma polaridade, e gira no sentido contrário quando essa polaridade é invertida, trocando os dois fios de lugar. Diferente de inverter a polaridade de um LED, que simplesmente não acende, inverter os fios de um motor não o danifica: ele apenas passa a girar ao contrário. É esse princípio que circuitos chamados de ponte H usam para controlar, por código, se um motor deve girar para frente ou para trás."
+  },
+  {
+    "id": "unidades-prefixos-eletricos",
+    "titulo": "Prefixos de unidades elétricas (mili, quilo)",
+    "descricao": "Grandezas elétricas costumam vir acompanhadas de prefixos que indicam múltiplos ou frações da unidade principal, pra evitar escrever números muito grandes ou muito pequenos. Um miliampere (mA) equivale a um milésimo de ampere, e é a unidade comum pra medir a corrente consumida por LEDs e microcontroladores. Um quilo-ohm (kΩ) equivale a mil ohms, e é comum para valores de resistores. Reconhecer esses prefixos ajuda a interpretar corretamente valores encontrados em folhas de especificação de componentes."
+  },
+  {
+    "id": "diagrama-esquematico-simbolos",
+    "titulo": "Como ler os símbolos de um diagrama esquemático",
+    "descricao": "Um diagrama esquemático representa um circuito usando símbolos padronizados em vez de desenhos realistas dos componentes: um resistor costuma ser um retângulo ou uma linha em zigue-zague, um LED é um triângulo apontando para uma linha com duas setinhas saindo dele (representando a luz emitida), e um capacitor é geralmente duas linhas paralelas. As linhas que conectam os símbolos representam os fios do circuito, e pontos onde essas linhas se cruzam com um pequeno círculo indicam uma conexão elétrica real entre elas, diferente de linhas que só se cruzam visualmente sem se conectar. Saber ler esses símbolos permite entender o funcionamento de um circuito sem depender de fotos ou desenhos da montagem física."
   }
 ]
